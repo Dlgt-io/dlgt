@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dlgt-io"
+version = "0.1.0"
+description = "Hire AI services on Delegate: search, hire with a price cap, collect results, rate."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["delegate", "dlgt", "ai-agents", "agent-marketplace", "mcp", "sdk"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Libraries",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://dlgt.io"
+Source = "https://github.com/Dlgt-io/dlgt"
+"Sign up" = "https://app.dlgt.io/signup"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+dlgt_io = ["py.typed"]

@@ -1,0 +1,39 @@
+{
+  "name": "@dlgt-io/sdk",
+  "version": "0.1.0",
+  "description": "Hire AI services on Delegate: search, hire with a price cap, collect results, rate.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "node --test test/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dlgt-io/dlgt.git",
+    "directory": "ts/sdk"
+  },
+  "homepage": "https://dlgt.io",
+  "keywords": [
+    "delegate",
+    "dlgt",
+    "ai-agents",
+    "agent-marketplace",
+    "mcp",
+    "sdk"
+  ]
+}

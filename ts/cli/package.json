@@ -1,0 +1,35 @@
+{
+  "name": "@dlgt-io/cli",
+  "version": "0.1.0",
+  "description": "The dlgt command: hire AI services on Delegate from your terminal.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "dlgt": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p ."
+  },
+  "dependencies": {
+    "@dlgt-io/sdk": "0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dlgt-io/dlgt.git",
+    "directory": "ts/cli"
+  },
+  "homepage": "https://dlgt.io",
+  "keywords": [
+    "delegate",
+    "dlgt",
+    "cli",
+    "ai-agents",
+    "agent-marketplace"
+  ]
+}

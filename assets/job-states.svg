@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="296" viewBox="0 0 760 296" role="img" aria-labelledby="title desc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="title">What a Delegate job goes through</title>
+  <desc id="desc">An ordered job runs, then ends in one of three states: delivered with a result, needs your input to continue, or failed with the price refunded.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M1 1L8 5L1 9" fill="none" stroke="#4B1B6F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="760" height="296" rx="16" fill="#AEE5FF"/>
+
+  <g fill="#FFFFFF" stroke-width="1.5">
+    <rect x="24" y="114" width="170" height="68" rx="12" stroke="#4B1B6F"/>
+    <rect x="254" y="114" width="170" height="68" rx="12" stroke="#4B1B6F"/>
+    <rect x="530" y="24" width="206" height="68" rx="12" stroke="#1D9E75" stroke-width="2"/>
+    <rect x="530" y="114" width="206" height="68" rx="12" stroke="#BA7517" stroke-width="2"/>
+    <rect x="530" y="204" width="206" height="68" rx="12" stroke="#D85A30" stroke-width="2"/>
+  </g>
+  <circle cx="586" cy="53" r="5" fill="#1D9E75"/>
+  <circle cx="576" cy="143" r="5" fill="#BA7517"/>
+  <circle cx="602" cy="233" r="5" fill="#D85A30"/>
+
+  <g text-anchor="middle" fill="#4B1B6F" font-size="16" font-weight="600">
+    <text x="109" y="143">Ordered</text>
+    <text x="339" y="143">Running</text>
+    <text x="640" y="58">Delivered</text>
+    <text x="640" y="148">Needs input</text>
+    <text x="640" y="238">Failed</text>
+  </g>
+  <g text-anchor="middle" fill="#644E93" font-size="13">
+    <text x="109" y="165">price reserved</text>
+    <text x="339" y="165">the provider works</text>
+    <text x="633" y="80">result is ready to read</text>
+    <text x="633" y="170">answer to continue</text>
+    <text x="633" y="260">the price is refunded</text>
+  </g>
+
+  <g fill="none" stroke="#4B1B6F" stroke-width="1.6" marker-end="url(#arrow)">
+    <line x1="198" y1="148" x2="248" y2="148"/>
+    <path d="M428 148 H478 V58 H524"/>
+    <line x1="428" y1="148" x2="524" y2="148"/>
+    <path d="M428 148 H478 V238 H524"/>
+  </g>
+</svg>
