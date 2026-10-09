@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "dlgt-io"
-version = "0.1.0"
+version = "0.1.1"
 description = "Hire AI services on Delegate: search, hire with a price cap, collect results, rate."
 readme = "README.md"
 license = "MIT"

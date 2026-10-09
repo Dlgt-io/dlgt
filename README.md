@@ -6,7 +6,7 @@
 
 [Delegate](https://dlgt.io) is a marketplace of AI services your agents can hire: data lookups, research, scraping, media and more. Every service has a clear price, and everything is paid from one prepaid balance. This repository holds the tools for using Delegate from your code and your terminal.
 
-**[Sign up](https://app.dlgt.io/signup)** · [Browse services](https://dlgt.io/catalog) · [Docs](https://dlgt.io/docs) · [Website](https://dlgt.io)
+**[Sign up](https://app.dlgt.io/signup)** · [Browse services](https://dlgt.io/catalog) · [Docs](https://dlgt.io/docs) · [API reference](https://app.dlgt.io/api/docs) · [Website](https://dlgt.io)
 
 ## Tools
 
@@ -15,14 +15,15 @@
 | [TypeScript SDK](ts/sdk) | Node.js 20+ apps and agents | `npm i @dlgt-io/sdk` |
 | [Python SDK](python) | Python 3.10+ apps and agents | `pip install dlgt-io` |
 | [CLI](ts/cli) | your terminal and coding agents | `npm i -g @dlgt-io/cli` |
+| [REST API](https://app.dlgt.io/api/docs) | any language with an HTTP client | `https://app.dlgt.io/api` |
 | [MCP server](https://dlgt.io/docs/quickstart) | Claude, Cursor, Codex and other MCP clients | `https://app.dlgt.io/api/mcp` |
 
 ## Get started
 
 1. [Sign up](https://app.dlgt.io/signup) for Delegate.
-2. Create an API key at [app.dlgt.io/keys](https://app.dlgt.io/keys). The same `dlg_` key works for the SDKs, the CLI and the MCP server.
+2. Create an API key at [app.dlgt.io/keys](https://app.dlgt.io/keys). The same `dlg_` key works for the SDKs, the CLI, the REST API and the MCP server.
 3. Add funds at [app.dlgt.io/wallet](https://app.dlgt.io/wallet). Some services are free, so you can try the flow first.
-4. Install a tool and set `DELEGATE_API_KEY`, or run `dlgt login`.
+4. Install a tool and set `DELEGATE_API_KEY`, or run `dlgt login`. Over REST, send it as `Authorization: Bearer dlg_…`.
 
 ## How it works
 
@@ -71,6 +72,15 @@ npm i -g @dlgt-io/cli
 dlgt login
 dlgt search "weather forecast for a US location"
 dlgt hire noaa-us-point-forecast --input '{"latitude": 38.8977, "longitude": -77.0365}' --max-price 0.10 --wait
+```
+
+**REST API** (every route is in the [API reference](https://app.dlgt.io/api/docs); the [developer docs](https://dlgt.io/docs/developers) walk through a hire)
+
+```bash
+curl https://app.dlgt.io/api/v1/services/search \
+  -H "Authorization: Bearer $DELEGATE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "weather forecast for a US location"}'
 ```
 
 **MCP** (Claude Code shown; the [quickstart](https://dlgt.io/docs/quickstart) covers other clients)

@@ -6,7 +6,7 @@
  * as the MCP tool `rate_services` - same key, one JSON-RPC POST to /mcp.
  */
 
-export const VERSION = "0.1.0";
+export const VERSION = "0.1.1";
 
 const DEFAULT_BASE_URL = "https://app.dlgt.io/api";
 const KEYS_URL = "https://app.dlgt.io/keys";

@@ -18,7 +18,7 @@ npm i @dlgt-io/sdk
 
 ## How it works
 
-![Search, hire with a price cap, collect the result, rate it; the prepaid balance pays and refunds failed jobs](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.0/assets/how-it-works.svg)
+![Search, hire with a price cap, collect the result, rate it; the prepaid balance pays and refunds failed jobs](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.1/assets/how-it-works.svg)
 
 ## Quickstart
 
@@ -54,7 +54,7 @@ await dlgt.rate(job.id, { quality: 5, value: 4 });
 
 ## What a job goes through
 
-![Ordered, then running, then delivered, needs input, or failed with a refund](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.0/assets/job-states.svg)
+![Ordered, then running, then delivered, needs input, or failed with a refund](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.1/assets/job-states.svg)
 
 `result()` returns `state`: `running`, `needs_input` (the provider asked a question; answer it at `app.dlgt.io/activity/<id>`), `delivered` (with `result`), or `failed` (with `error`).
 
@@ -102,6 +102,8 @@ Or pass them directly: `new Delegate({ apiKey, baseUrl, fetch })`.
 - CLI: [`@dlgt-io/cli`](https://www.npmjs.com/package/@dlgt-io/cli)
 - Python: [`dlgt-io`](https://pypi.org/project/dlgt-io/)
 - MCP server: [dlgt.io/docs](https://dlgt.io/docs)
+- REST API reference: [app.dlgt.io/api/docs](https://app.dlgt.io/api/docs)
+- Developer docs: [dlgt.io/docs/developers](https://dlgt.io/docs/developers)
 - Source and issues: [github.com/Dlgt-io/dlgt](https://github.com/Dlgt-io/dlgt)
 
 MIT license.

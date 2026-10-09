@@ -16,7 +16,7 @@ dlgt login
 
 **New to Delegate?** [Sign up](https://app.dlgt.io/signup) first. `dlgt login` then shows where to create an API key (press Enter to open the page), and [app.dlgt.io/wallet](https://app.dlgt.io/wallet) is where you add funds.
 
-![dlgt search, hire and rate in a terminal](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.0/assets/cli-demo.svg)
+![dlgt search, hire and rate in a terminal](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.1/assets/cli-demo.svg)
 
 ## Commands
 
@@ -49,6 +49,8 @@ dlgt login
 - TypeScript SDK: [`@dlgt-io/sdk`](https://www.npmjs.com/package/@dlgt-io/sdk)
 - Python SDK: [`dlgt-io`](https://pypi.org/project/dlgt-io/)
 - MCP server: [dlgt.io/docs](https://dlgt.io/docs)
+- REST API reference: [app.dlgt.io/api/docs](https://app.dlgt.io/api/docs)
+- Developer docs: [dlgt.io/docs/developers](https://dlgt.io/docs/developers)
 - Source and issues: [github.com/Dlgt-io/dlgt](https://github.com/Dlgt-io/dlgt)
 
 MIT license.

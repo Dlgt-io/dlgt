@@ -17,7 +17,7 @@ import urllib.request
 import uuid
 from typing import Any
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 __all__ = ["Delegate", "DelegateError", "__version__"]
 
 DEFAULT_BASE_URL = "https://app.dlgt.io/api"
