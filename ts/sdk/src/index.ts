@@ -6,7 +6,7 @@
  * as the MCP tool `rate_services` - same key, one JSON-RPC POST to /mcp.
  */
 
-export const VERSION = "0.1.1";
+export const VERSION = "0.1.2";
 
 const DEFAULT_BASE_URL = "https://app.dlgt.io/api";
 const KEYS_URL = "https://app.dlgt.io/keys";
@@ -392,10 +392,25 @@ function jobView(id: string, detail: Json): JobResult {
     }
     return { ...view, state: "delivered", result: payload };
   }
-  if (["rejected", "dispatch_failed"].includes(job.status)) return { ...view, state: "failed", error: `Job ${job.status}` };
+  if (["rejected", "dispatch_failed"].includes(job.status)) {
+    return { ...view, state: "failed", error: rejectReason(detail, job) ?? `Job ${job.status}` };
+  }
   if (conversation.status === "disputed") return { ...view, state: "failed", error: "Disputed" };
   if (questions.length) return { ...view, state: "needs_input" };
   return { ...view, state: "running" };
+}
+
+/** Why the provider turned this job down: its latest task/reject message. */
+function rejectReason(detail: Json, job: Json): string | null {
+  const messages: Json[] = Array.isArray(detail.messages) ? detail.messages : [];
+  for (const message of [...messages].reverse()) {
+    const payload = message?.a2a_payload;
+    if (payload?.type !== "task/reject" || ![undefined, null, job.id].includes(payload.job_id)) continue;
+    // A reason the server flagged as unsafe stays in raw, not in error.
+    if (payload.security_warning) return null;
+    return typeof payload.reason === "string" && payload.reason.trim() ? payload.reason : null;
+  }
+  return null;
 }
 
 async function errorFrom(res: Response): Promise<DelegateError> {

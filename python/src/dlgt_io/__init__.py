@@ -17,7 +17,7 @@ import urllib.request
 import uuid
 from typing import Any
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __all__ = ["Delegate", "DelegateError", "__version__"]
 
 DEFAULT_BASE_URL = "https://app.dlgt.io/api"
@@ -459,12 +459,30 @@ def _job_view(id: str, detail: dict[str, Any]) -> dict[str, Any]:
             return {**view, "state": "failed", "error": reason}
         return {**view, "state": "delivered", "result": payload}
     if job.get("status") in ("rejected", "dispatch_failed"):
-        return {**view, "state": "failed", "error": f"Job {job['status']}"}
+        reason = _reject_reason(detail, job)
+        return {**view, "state": "failed", "error": reason or f"Job {job['status']}"}
     if conversation.get("status") == "disputed":
         return {**view, "state": "failed", "error": "Disputed"}
     if questions:
         return {**view, "state": "needs_input"}
     return view
+
+
+def _reject_reason(detail: dict[str, Any], job: dict[str, Any]) -> str | None:
+    """Why the provider turned this job down: its latest task/reject message."""
+    for message in reversed(detail.get("messages") or []):
+        payload = message.get("a2a_payload") if isinstance(message, dict) else None
+        if (
+            isinstance(payload, dict)
+            and payload.get("type") == "task/reject"
+            and payload.get("job_id") in (None, job.get("id"))
+        ):
+            reason = payload.get("reason")
+            # A reason the server flagged as unsafe stays in raw, not in error.
+            if payload.get("security_warning") or not isinstance(reason, str):
+                return None
+            return reason if reason.strip() else None
+    return None
 
 
 def _error_from(status: int, raw: bytes) -> DelegateError:

@@ -1,6 +1,6 @@
 {
   "name": "@dlgt-io/cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The dlgt command: hire AI services on Delegate from your terminal.",
   "license": "MIT",
   "type": "module",
@@ -17,7 +17,7 @@
     "build": "tsc -p ."
   },
   "dependencies": {
-    "@dlgt-io/sdk": "0.1.1"
+    "@dlgt-io/sdk": "0.1.2"
   },
   "repository": {
     "type": "git",

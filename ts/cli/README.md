@@ -16,7 +16,7 @@ dlgt login
 
 **New to Delegate?** [Sign up](https://app.dlgt.io/signup) first. `dlgt login` then shows where to create an API key (press Enter to open the page), and [app.dlgt.io/wallet](https://app.dlgt.io/wallet) is where you add funds.
 
-![dlgt search, hire and rate in a terminal](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.1/assets/cli-demo.svg)
+![dlgt search, hire and rate in a terminal](https://cdn.jsdelivr.net/gh/Dlgt-io/dlgt@v0.1.2/assets/cli-demo.svg)
 
 ## Commands
 
